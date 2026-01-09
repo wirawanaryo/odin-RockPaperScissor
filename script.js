@@ -1,19 +1,19 @@
-// create function that randamly returns rock/paper/scissors
+// function that randomly returns rock/paper/scissors
 function getComputerChoice(){
-  const choices = ['ROCK', 'PAPER', 'SCISSORS'];
+  const choices = ['ROCK', 'PAPER', 'SCISSORS'];  
   return choices[Math.floor(Math.random()*100)%3];
 }
 
 //function that prompt user for input
 function getHumanChoice(){
-  const choices = ['rock', 'paper', 'scissors'];
-  let userChoice = prompt("What will you choose? Rock, Paper, or Scissors?");
+  const choices = ['ROCK', 'PAPER', 'SCISSORS'];
+  let humanChoice = prompt("What will you choose? Rock, Paper, or Scissors?");
 
-  while (!choices.includes(userChoice)){
-    userChoice = prompt("Invalid choice. Please choose rock, paper, or scissors.");
+  while (!choices.includes(humanChoice.toUpperCase())){
+    humanChoice = prompt("Invalid choice. Please choose rock, paper, or scissors.");
   }
 
-  return userChoice.toUpperCase();
+  return humanChoice.toUpperCase();
 }
 
 //score variables
@@ -22,13 +22,17 @@ let computerScore = 0;
 
 //game function
 function playRound(humanChoice, computerChoice, round){
-  //welcome message
+  //welcome message based on round number
   if (round === 0){
     console.log("Hello, Lets play Rock, Paper, Scissors!");
   }else{
     console.log(`Lest play again! Current Score - You: ${humanScore}, Computer: ${computerScore}`);
   } 
+
+  //tell user their choice and computer's choice
   console.log(`You chose: ${humanChoice}, Computer chose: ${computerChoice}`);
+
+  //determine winner
   switch (humanChoice + "|" + computerChoice){
     case "ROCK|SCISSORS":
     case "PAPER|ROCK":
@@ -53,6 +57,7 @@ function playGame(rounds){
     round = i;
     playRound(getHumanChoice(), getComputerChoice(), round);    
   }
+  
   console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
   if (humanScore > computerScore){
     console.log("Congratulations! You are the overall winner!");
