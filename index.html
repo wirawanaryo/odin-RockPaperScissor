@@ -4,8 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- <script src="script.js"></script> -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script src="script.js"></script>
-</body>
-</html>
+  <div class="mainframe">
+    <div class="startBanner">
+      <h1 id="title">Let's Play Rock Paper Scissors</h1>
+      <button id="playButton">Play Game</button>
+    </div>    
+    <div class="scoreBoard">
+      <div class="scores">
+        <span id="playerScore">Your Score: 0  </span>
+        <span id="computerScore">Computer Score: 0</span>
+      </div>      
+      <h2 id="statusMessage">Game Start!!!</h2>
+    </div>
+    <div class="choicePreview">
+      <div class="playerSide">
+        <h3>You Chose:</h3>
+        <h1 id="playerChoice">Paper </h1>
+      </div>
+      <div class="versusBox"> 
+        <!-- this will be added with something next time -->
+        <h1>VS</h1>
+      </div>                
+      <div class="computerSide">
+        <h3>Computer Chose:</h3>
+        <h1 id="computerChoice">Rock </h1>
+      </div>        
+    </div>
+    <div class="playButtonsFrame">
+      <div class="message2player">
+        <h3>Pick Your Choice:</h3>
+      </div>
+      <div class="choiceButtons">
+        <button id="rockButton">Rock</button>
+        <button id="paperButton">Paper</button>
+        <button id="scissorsButton">Scissors</button>
+    </div>
+  </div>  
