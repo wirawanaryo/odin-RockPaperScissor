@@ -16,7 +16,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;  
-  height: 600px;
+  height: 500px;
   width: 650px;
   background-color: lightgrey;  
   border-radius: 15px;
@@ -46,23 +46,24 @@ body{
 
 .scoreBoard{  
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  gap: 40px;
   width: 100%;  
   text-align: center;
-  height: 75px;
+  height: 100px;
   margin-top: 20px;
 }
 #statusMessage{  
-  width: 100%;
-  text-align: center;
-  margin:0;
-}
-.scores{
   width: 100%;  
+  text-align: center;  
+  margin: 0;  
+}
+.scores{   
+  height: 50px;
   display: flex;
   justify-content: space-between; 
-  margin: 0 40px 0 40px; 
+  margin: 0 60px 0 60px; 
 }
 
 .choicePreview{  
@@ -70,13 +71,20 @@ body{
   height: 200px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   padding: 0 40px 0 40px;
+}
+.versusBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
 }
 .computerSide, .playerSide{  
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
+  justify-content: center;
 }
 .playerSide{
   margin-left: 20px;
