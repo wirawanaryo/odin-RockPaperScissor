@@ -12,15 +12,29 @@ body{
   align-items: center;  
 }
 
+.startscreen{
+  background-color:  rgba(29, 134, 112, 0.3);
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 10;
+  border-radius: 15px;
+}
 .mainframe {  
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  
+  display: grid; 
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; 
   height: 500px;
   width: 650px;
-  background-color: lightgrey;  
+  background-color: lightgrey;
   border-radius: 15px;
   filter: drop-shadow(5px 10px 5px rgba(0,0,0,0.3));
+}
+
+.mainlayer{
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;  
+  grid-template-rows: 30% 40% 30%; 
 }
 
 .startBanner{
@@ -35,7 +49,7 @@ body{
   font-family: titleFont;
   width: 100%;
   height: 50px;
-  text-align: center;
+  text-align: center;  
   margin: 0;
 }
 #startButton{    
@@ -54,10 +68,11 @@ body{
   height: 100px;
   margin-top: 20px;
 }
-#statusMessage{  
-  width: 100%;  
-  text-align: center;  
-  margin: 0;  
+#statusMessage{
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
 .scores{   
   height: 50px;
@@ -66,28 +81,35 @@ body{
   margin: 0 60px 0 60px; 
 }
 
-.choicePreview{  
-  width: 100%; 
+.choicePreview{
+  /* width: 100%; */
   height: 200px;
   display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-  padding: 0 40px 0 40px;
+  justify-content: center;
+  /* align-items: center; */ 
+  gap: 16%;    
 }
 .versusBox{
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
+  margin: 0 0 0 30px;
 }
 .computerSide, .playerSide{  
   display: flex;
   flex-direction: column;
   align-items: center;  
-  justify-content: center;
+  justify-content: center;  
+  gap: 10px;
+  padding-top: 10px;
+}
+.computerSide{
+  padding-right: 10px;
 }
 .playerSide{
-  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 
 .playButtonsFrame{
@@ -111,7 +133,8 @@ body{
   width: 150px;
   height: 50px;
 }
-.message2player{  
+.message2player{
+  margin-top: 10px;
   flex: 1;
   width: 100%;
   height: 50px;

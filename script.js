@@ -68,7 +68,7 @@ getHumanChoice();
 
 //final report
 function finalScore(maxrounds){
-  if (round === maxrounds -1){
+  if (round === maxrounds){
     console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
     if (humanScore > computerScore){
       alert("Congratulations! You are the overall winner!");
