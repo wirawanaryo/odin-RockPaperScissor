@@ -13,12 +13,37 @@ body{
 }
 
 .startscreen{
-  background-color:  rgba(29, 134, 112, 0.3);
+  background-color:  rgba(36, 36, 36, 1);
   grid-column: 1;
   grid-row: 1;
   z-index: 10;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
+.startscreen h1{
+  color: white;
+  font-family: titleFont;
+  text-align: center;
+  font-size: 4em;
+  letter-spacing: 3px;
+}
+#startGameButton{
+  height: 10%;
+  width: 40%;
+  font-weight: 700;
+  font-size: 150%;
+  color: rgb(56, 56, 56);
+  border-radius: 10px;
+  border-color: white;
+}
+
+
 .mainframe {  
   display: grid; 
   grid-template-columns: 1fr;

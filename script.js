@@ -1,3 +1,6 @@
+//mainframe
+const mainframe = document.querySelector(".mainframe");
+
 // choice variables
 let computerChoice = "";
 const computerChoicePreview = document.getElementById("computerChoicePreview");
@@ -60,7 +63,7 @@ function getHumanChoice(){
       computerChoicePreview.textContent = computerChoice.charAt(0) + computerChoice.slice(1).toLowerCase();     
       determineWinner(humanChoice, computerChoice);   
       updateScoreBoard();
-      finalScore(5);      
+      finalScore(5);   
     });  
   }
 }
@@ -72,10 +75,13 @@ function finalScore(maxrounds){
     console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
     if (humanScore > computerScore){
       alert("Congratulations! You are the overall winner!");
+      mainframe.prepend(createStartscreen());
     } else if (computerScore > humanScore){
       alert("Computer is the overall winner! Better luck next time.");
+      mainframe.prepend(createStartscreen());
     } else {
       alert("The game ends in a tie!");
+      mainframe.prepend(createStartscreen());
     }
     round = 0
     humanScore = 0;
@@ -102,6 +108,32 @@ function playGame(rounds){
   }
 }
 
-//start game with 5 rounds
-// playGame(5);
+//startscreen logic
+const startscreen = document.querySelector(".startscreen");
+function createStartscreen(){
+  const startscreen = document.createElement('div');
+  startscreen.className  ='startscreen';
 
+  const title =  document.createElement('h1');
+  title.textContent = "Let's Play Rock Paper Scissor";
+
+  const startGameButton = document.createElement('button');
+  startGameButton.id = 'startGameButton';
+  startGameButton.textContent = 'Press to Play'
+
+  startGameButton.addEventListener('click', function() {
+    startscreen.remove();
+  })
+
+  startscreen.appendChild(title);
+  startscreen.appendChild(startGameButton);
+  
+  return startscreen;
+}
+const startGameButton = document.getElementById("startGameButton")
+function Press2Play(){
+  startGameButton.addEventListener('click', function() {
+    startscreen.remove();
+  })
+}
+Press2Play();
